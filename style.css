@@ -3,14 +3,15 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Fira Sans';
     font-size: 14px;
     color: white;
     background-color: black;
+    max-width: 1920px;
+    min-width: 360px;
 
     display: flex;
     flex-direction: column;
@@ -19,9 +20,6 @@ body {
 
     padding-bottom: 120px;
     margin: 0 auto;
-
-    max-width: 1920px;
-    min-width: 360px;
 }
 
 .header {
@@ -118,6 +116,98 @@ body {
     line-height: normal;
 }
 
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 445px);
+    gap: 30px;
+    max-width: 1244px;
+}
+
+.gallery__card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    border-radius: 16px;
+}
+
+.gallery__photo {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.first {
+    grid-row: span 2;
+}
+
+.second {
+    grid-column: span 2;
+}
+
+.forth {
+    grid-row: span 2;
+}
+
+.fifth {
+    grid-column: span 2;
+}
+
+.sixth {
+    grid-column: span 3;
+}
+
+.seventh {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.eleventh {
+    grid-column: span 2;
+}
+
+.twelfth {
+    grid-column: span 3;
+    grid-row: span 3;
+}
+
+.second::after,
+.sixth::after,
+.eleventh::after,
+.twelfth::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(44, 44, 44, 0.5);
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.gallery__card-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 50px;
+    box-sizing: border-box;
+
+    font-size: 36px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+
+    width: 80%;
+    height: 100%;
+}
 
 .footer {
     width: 100%;
@@ -137,10 +227,25 @@ body {
 @media screen and (max-width: 1245px) {
     .header__title {
         font-size: 100px;
-    }   
+    }
+
+    
 }
 
 @media screen and (max-width: 768px) {
+    .header__overlay {
+        padding: 40px;
+        gap: 150px;
+    }
+
+    .header__title {
+        font-size: 60px;
+    }
+
+    .header__subtitle {
+        font-size: 18px;
+    }
+
     .header__nav {
         display: none;
     }
@@ -149,15 +254,15 @@ body {
         display: block;
     }
 
-    .header__overlay {
-        padding: 40px;
+    .header {
+        height: 500px;
     }
 
-    .header__title {
-        font-size: 60px;
-    }
     
-    .header__subtitle {
-        font-size: 18px;
+
+    .footer__nav {
+        flex-direction: column;
+        gap: 20px;
+        line-height: 1;
     }
 }

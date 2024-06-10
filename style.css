@@ -122,6 +122,7 @@ body {
     grid-template-rows: repeat(10, 445px);
     gap: 30px;
     max-width: 1244px;
+    grid-auto-flow: dense;
 }
 
 .gallery__card {
@@ -229,7 +230,23 @@ body {
         font-size: 100px;
     }
 
-    
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(9, 486px);
+    }
+
+    .gallery__card {
+        grid-row: span 1;
+        grid-column: span 2;
+    }
+
+    .gallery__card:last-of-type(2n) {
+        grid-column: span 1;
+    }
+
+    .gallery__card-description {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -258,7 +275,20 @@ body {
         height: 500px;
     }
 
+    .gallery {
+        grid-template-columns: 1f;
+        grid-template-rows: repeat(12, 357px);
+        padding: 0 30px;
+    }
     
+    .gallery__card {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    .gallery__card-description {
+        font-size: 16px;
+    }
 
     .footer__nav {
         flex-direction: column;

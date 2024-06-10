@@ -240,7 +240,7 @@ body {
         grid-column: span 2;
     }
 
-    .gallery__card:last-of-type(2n) {
+    .gallery__card:nth-of-type(2n) {
         grid-column: span 1;
     }
 
@@ -283,7 +283,7 @@ body {
     
     .gallery__card {
         grid-row: span 1;
-        grid-column: span 1;
+        grid-column: span 2;
     }
 
     .gallery__card-description {
